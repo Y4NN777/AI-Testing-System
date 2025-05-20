@@ -1,5 +1,8 @@
-pillow numpy opencv-python
+pillow
+numpy
+opencv-python
 requests
 python-dotenv
 google-cloud-vision
 google-generativeai
+pyyaml
