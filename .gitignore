@@ -1,3 +1,6 @@
 .venv
 .env
-cloud-credentials.json
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

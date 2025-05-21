@@ -1,5 +1,12 @@
-pillow numpy opencv-python
+pillow
+numpy
+opencv-python
+easyocr
+transformers
+torch
 requests
 python-dotenv
-google-cloud-vision
+huggingface_hub
+replicate
+pyyaml
 google-generativeai
