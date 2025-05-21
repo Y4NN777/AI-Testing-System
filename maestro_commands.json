@@ -1,0 +1,249 @@
+{
+  "commands": [
+    {
+      "name": "tapOn",
+      "description": "Taps on a UI element identified by text, ID, or element hierarchy path",
+      "parameters": {
+        "text": "Text displayed on the element",
+        "id": "Element's unique identifier",
+        "element": "XPath-like hierarchy path"
+      },
+      "examples": [
+        "tapOn: \"Login\"",
+        "tapOn: {id: \"username_field\"}"
+      ]
+    },
+    {
+      "name": "inputText",
+      "description": "Inputs text into the currently focused element",
+      "parameters": {},
+      "examples": [
+        "inputText: \"user@example.com\""
+      ]
+    },
+    {
+      "name": "assertVisible",
+      "description": "Verifies that a UI element is visible on screen",
+      "parameters": {
+        "text": "Text to look for",
+        "id": "Element's unique identifier",
+        "element": "XPath-like hierarchy path"
+      },
+      "examples": [
+        "assertVisible: \"Welcome\"",
+        "assertVisible: {id: \"success_message\"}"
+      ]
+    },
+    {
+      "name": "scroll",
+      "description": "Scrolls in the specified direction",
+      "parameters": {
+        "direction": "Direction to scroll (UP, DOWN, LEFT, RIGHT)"
+      },
+      "examples": [
+        "scroll: {direction: DOWN}"
+      ]
+    },
+    {
+      "name": "swipe",
+      "description": "Performs a swipe gesture",
+      "parameters": {
+        "direction": "Direction to swipe (UP, DOWN, LEFT, RIGHT)",
+        "start": "Starting coordinates (x, y)",
+        "end": "Ending coordinates (x, y)"
+      },
+      "examples": [
+        "swipe: {direction: LEFT}",
+        "swipe: {start: [0.5, 0.8], end: [0.5, 0.2]}"
+      ]
+    },
+    {
+      "name": "scrollUntilVisible",
+      "description": "Scrolls until the specified element becomes visible",
+      "parameters": {
+        "element": "Text or element to find",
+        "direction": "Direction to scroll (UP, DOWN, LEFT, RIGHT)"
+      },
+      "examples": [
+        "scrollUntilVisible: {element: \"Settings\", direction: DOWN}"
+      ]
+    },
+    {
+      "name": "back",
+      "description": "Simulates pressing the device back button",
+      "parameters": {},
+      "examples": [
+        "back: {}"
+      ]
+    },
+    {
+      "name": "hideKeyboard",
+      "description": "Hides the on-screen keyboard if visible",
+      "parameters": {},
+      "examples": [
+        "hideKeyboard: {}"
+      ]
+    },
+    {
+      "name": "pressKey",
+      "description": "Simulates pressing a device key",
+      "parameters": {
+        "key": "Key code to press (HOME, BACK, ENTER, etc.)"
+      },
+      "examples": [
+        "pressKey: ENTER"
+      ]
+    },
+    {
+      "name": "launchApp",
+      "description": "Launches the specified application",
+      "parameters": {
+        "appId": "Package name/bundle identifier of the app"
+      },
+      "examples": [
+        "launchApp: {appId: \"com.example.app\"}"
+      ]
+    },
+    {
+      "name": "eraseText",
+      "description": "Erases text from the currently focused element",
+      "parameters": {
+        "charactersToRemove": "Number of characters to remove (optional)"
+      },
+      "examples": [
+        "eraseText: {}",
+        "eraseText: {charactersToRemove: 5}"
+      ]
+    },
+    {
+      "name": "closeApp",
+      "description": "Closes the current application",
+      "parameters": {},
+      "examples": [
+        "closeApp: {}"
+      ]
+    },
+    {
+      "name": "takeScreenshot",
+      "description": "Takes a screenshot and saves it",
+      "parameters": {
+        "name": "Name for the screenshot file (optional)"
+      },
+      "examples": [
+        "takeScreenshot: {name: \"login_screen\"}"
+      ]
+    },
+    {
+      "name": "waitForAnimationToEnd",
+      "description": "Waits for animations to complete before proceeding",
+      "parameters": {
+        "timeout": "Maximum time to wait in milliseconds (optional)"
+      },
+      "examples": [
+        "waitForAnimationToEnd: {timeout: 5000}"
+      ]
+    },
+    {
+      "name": "assertNotVisible",
+      "description": "Verifies that a UI element is not visible on screen",
+      "parameters": {
+        "text": "Text to look for",
+        "id": "Element's unique identifier",
+        "element": "XPath-like hierarchy path"
+      },
+      "examples": [
+        "assertNotVisible: \"Error\""
+      ]
+    },
+    {
+      "name": "longTapOn",
+      "description": "Performs a long press on a UI element",
+      "parameters": {
+        "text": "Text displayed on the element",
+        "id": "Element's unique identifier",
+        "element": "XPath-like hierarchy path",
+        "duration": "Duration of the long press in milliseconds (optional)"
+      },
+      "examples": [
+        "longTapOn: \"Item\"",
+        "longTapOn: {id: \"context_menu\", duration: 1000}"
+      ]
+    },
+    {
+      "name": "doubleTapOn",
+      "description": "Performs a double tap on a UI element",
+      "parameters": {
+        "text": "Text displayed on the element",
+        "id": "Element's unique identifier",
+        "element": "XPath-like hierarchy path"
+      },
+      "examples": [
+        "doubleTapOn: \"Zoom\""
+      ]
+    },
+    {
+      "name": "tapOnPoint",
+      "description": "Taps on specific coordinates on the screen",
+      "parameters": {
+        "x": "X coordinate or percentage (0-1)",
+        "y": "Y coordinate or percentage (0-1)"
+      },
+      "examples": [
+        "tapOnPoint: {x: 0.5, y: 0.75}"
+      ]
+    },
+    {
+      "name": "runFlow",
+      "description": "Runs another Maestro flow from within the current flow",
+      "parameters": {
+        "file": "Path to the flow file"
+      },
+      "examples": [
+        "runFlow: {file: \"login_flow.yaml\"}"
+      ]
+    },
+    {
+      "name": "wait",
+      "description": "Waits for a specified duration",
+      "parameters": {
+        "time": "Time to wait in milliseconds"
+      },
+      "examples": [
+        "wait: {time: 2000}"
+      ]
+    },
+    {
+      "name": "evaluate",
+      "description": "Evaluates a JavaScript expression",
+      "parameters": {
+        "expression": "JavaScript expression to evaluate"
+      },
+      "examples": [
+        "evaluate: {expression: \"2 + 2\"}"
+      ]
+    },
+    {
+      "name": "extendedWaitUntil",
+      "description": "Waits until a condition is met with extended options",
+      "parameters": {
+        "condition": "Condition to wait for",
+        "timeout": "Maximum time to wait in milliseconds (optional)",
+        "pollInterval": "Interval between checks in milliseconds (optional)"
+      },
+      "examples": [
+        "extendedWaitUntil: {condition: visible('Submit'), timeout: 10000}"
+      ]
+    },
+    {
+      "name": "repeat",
+      "description": "Repeats a sequence of actions",
+      "parameters": {
+        "times": "Number of times to repeat",
+        "commands": "List of commands to repeat"
+      },
+      "examples": [
+        "repeat: {times: 3, commands: [{tapOn: \"Next\"}]}"
+      ]
+    }
+  ]
+}
